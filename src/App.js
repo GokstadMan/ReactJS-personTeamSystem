@@ -12,35 +12,35 @@ function App() {
     const [employees,setEmployees] = useState([{
         id: 1,
         fullName: "Ben Øhman",
-        designation: "JavaScript Developer",
+        designation: "JavaScript Utvikler",
         gender: "male",
         teamName: "TeamA"
       },
       {
         id: 2,
         fullName: "Tone Merete Christensen",
-        designation: "Node Developer",
+        designation: "Node Utvikler",
         gender: "female",
         teamName: "TeamA"
       },
       {
         id: 3,
         fullName: "Andrea Sommerseth",
-        designation: "Java Developer",
+        designation: "Java Utvikler",
         gender: "female",
         teamName: "TeamA"
       },
       {
         id: 4,
         fullName: "Jarl Opedal",
-        designation: "React Developer",
+        designation: "React Utvikler",
         gender: "male",
         teamName: "TeamB"
       },
       {
         id: 5,
         fullName: "Øyvind Wurschmidt",
-        designation: "DotNet Developer",
+        designation: "DotNet Utvikler",
         gender: "male",
         teamName: "TeamB"
       },
@@ -54,42 +54,42 @@ function App() {
       {
         id: 7,
         fullName: "Kjetil Christensen",
-        designation: "Angular Developer",
+        designation: "Angular Utvikler",
         gender: "male",
         teamName: "TeamC"
       },
       {
         id: 8,
         fullName: "Milla Sofie Ø.Christensen",
-        designation: "API Developer",
+        designation: "API Utvikler",
         gender: "female",
         teamName: "TeamC"
       },
       {
         id: 9,
         fullName: "Reidun Øhman",
-        designation: "C++ Developer",
+        designation: "C++ Utvikler",
         gender: "female",
         teamName: "TeamC"
       },
       {
         id: 10,
         fullName: "Stian Aslaksen",
-        designation: "Python Developer",
+        designation: "Python Utvikler",
         gender: "male",
         teamName: "TeamD"
       },
       {
         id: 11,
         fullName: "Jim Kristensen",
-        designation: "Vue Developer",
+        designation: "Vue Utvikler",
         gender: "male",
         teamName: "TeamD"
       },
       {
         id: 12,
         fullName: "Anders Persson",
-        designation: "Graphic Designer",
+        designation: "Grafisk Designer",
         gender: "male",
         teamName: "TeamD"
       }]);
@@ -108,8 +108,10 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Employees employees = {employees}
+      <Header     selectedTeam = {selectedTeam}
+                  teamMemberCount = {employees.filter((employee)=> employee.teamName === selectedTeam).length}
+                  />
+      <Employees  employees = {employees}
                   selectedTeam = {selectedTeam}
                   handleEmployeeCardClick = {handleEmployeeCardClick}
                   handleTeamSelectionChange = {handleTeamSelectionChange}
